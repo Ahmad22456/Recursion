@@ -1,0 +1,33 @@
+FUNCTION is_palindrome(word):
+
+VAR
+
+    n : INTEGER := word.length
+
+BEGIN
+
+    // Stop condition: an empty word or a word containing a single character is a palindrome.
+
+    IF (n <= 1) THEN
+
+        return true
+
+    END_IF
+    
+    // Compare the characters located at the ends of the word
+
+    IF (word[0] = word[n - 1]) THEN
+
+        // If equal, test the rest of the word by calling the function recursively
+
+        RETURN is_palindrome(word[1:n-2])
+
+    ELSE
+
+        // If difference, the word is not a palindrome
+
+        RETURN false
+
+    END_IF
+
+END
